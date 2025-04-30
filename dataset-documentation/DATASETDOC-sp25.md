@@ -1,83 +1,192 @@
-***Project Information*** 
+# DATASETDOC-sp25.md
 
-* What is the project name?  
-* What is the link to your project’s GitHub repository?   
-* What is the link to your project’s Google Drive folder? \*\**This should be a Spark\! Owned Google Drive folder \- please contact your PM if you do not have access\*\**  
-* In your own words, what is this project about? What is the goal of this project?   
-* Who is the client for the project?  
-* Who are the client contacts for the project?  
-* What class was this project part of?
+## Project Information
 
-***Dataset Information***
+**What is the project name?**  
+ISD: Data Reconciliation and Comparison
 
-* What data sets did you use in your project? Please provide a link to the data sets, this could be a link to a folder in your GitHub Repo, Spark\! owned Google Drive Folder for this project, or a path on the SCC, etc.  
-* Please provide a link to any data dictionaries for the datasets in this project. If one does not exist, please create a data dictionary for the datasets used in this project. **(Example of data dictionary)**   
-* What keywords or tags would you attach to the data set?  
-  * Domain(s) of Application: Computer Vision, Object Detection, OCR, Image Classification, Image Segmentation, Facial Recognition, NLP, Topic Modeling, Sentiment Analysis, Named Entity Recognition, Text Classification, Summarization, Anomaly Detection, Other   
-  * Sustainability, Health, Civic Tech, Voting, Housing, Policing, Budget, Education, Transportation, etc. 
+**What is the link to your project’s GitHub repository?**  
+https://github.com/BU-Spark/ds-isd-reconciliation
 
-*The following questions pertain to the datasets you used in your project.*   
-*Motivation* 
+**What is the link to your project’s Google Drive folder?**  
+https://drive.google.com/drive/folders/17W3eOY5tnY3JO7sHMJ2rUTcnqAVJAVd1
 
-* For what purpose was the dataset created? Was there a specific task in mind? Was there a specific gap that needed to be filled? Please provide a description. 
+**In your own words, what is this project about? What is the goal of this project?**  
+This project aims to improve compliance with Boston's Rental Registration Ordinance by identifying unregistered rental properties. By reconciling the city's rental registry with external datasets (311 complaints, student housing, violations, etc.), we aim to uncover discrepancies, analyze registration patterns, and provide ISD with tools to support more proactive enforcement and outreach.
 
-*Composition*
+**Who is the client for the project?**  
+Boston Inspectional Services Department (ISD), Housing Division
 
-* What do the instances that comprise the dataset represent (e.g., documents, photos, people, countries)? Are there multiple types of instances (e.g., movies, users, and ratings; people and interactions between them; nodes and edges)? What is the format of the instances (e.g., image data, text data, tabular data, audio data, video data, time series, graph data, geospatial data, multimodal (please specify), etc.)? Please provide a description.   
-* How many instances are there in total (of each type, if appropriate)?  
-* Does the dataset contain all possible instances or is it a sample (not necessarily random) of instances from a larger set? If the dataset is a sample, then what is the larger set? Is the sample representative of the larger set? If so, please describe how this representativeness was validated/verified. If it is not representative of the larger set, please describe why not (e.g., to cover a more diverse range of instances, because instances were withheld or unavailable).  
-* What data does each instance consist of? “Raw” data (e.g., unprocessed text or images) or features? In either case, please provide a description.   
-* Is there any information missing from individual instances? If so, please provide a description, explaining why this information is missing (e.g., because it was unavailable). This does not include intentionally removed information, but might include redacted text.   
-* Are there recommended data splits (e.g., training, development/validation, testing)? If so, please provide a description of these splits, explaining the rationale behind them  
-* Are there any errors, sources of noise, or redundancies in the dataset? If so, please provide a description.   
-* Is the dataset self-contained, or does it link to or otherwise rely on external resources (e.g., websites, tweets, other datasets)? If it links to or relies on external resources,   
-  * Are there guarantees that they will exist, and remain constant, over time;  
-  * Are there official archival versions of the complete dataset (i.e., including the external resources as they existed at the time the dataset was created)?  
-  * Are there any restrictions (e.g., licenses, fees) associated with any of the external resources that might apply to a dataset consumer? Please provide descriptions of all external resources and any restrictions associated with them, as well as links or other access points as appropriate.   
-* Does the dataset contain data that might be considered confidential (e.g., data that is protected by legal privilege or by doctor-patient confidentiality, data that includes the content of individuals’ non-public communications)? If so, please provide a description.   
-* Does the dataset contain data that, if viewed directly, might be offensive, insulting, threatening, or might otherwise cause anxiety? If so, please describe why.   
-* Is it possible to identify individuals (i.e., one or more natural persons), either directly or indirectly (i.e., in combination with other data) from the dataset? If so, please describe how.   
-* Dataset Snapshot, if there are multiple datasets please include multiple tables for each dataset. 
+**Who are the client contacts for the project?**  
+- Marcio Fonseca (marcio.fonseca.jr@boston.gov)  
+- Gina Belmonte (gina.belmonte@boston.gov)  
+- Sebastian Olascoaga (sebastian.olascoaga@boston.gov)
 
+**What class was this project part of?**  
+CDS DS 539 - Spark! Practicum
 
-| Size of dataset |  |
-| :---- | :---- |
-| Number of instances |  |
-| Number of fields  |  |
-| Labeled classes |  |
-| Number of labels  |  |
+---
 
+## Dataset Information
 
-  
-*Collection Process*
+**What data sets did you use in your project?**  
+- Active Rental Registrations (Jan 2025)  
+- 311 Service Requests (filtered to ISD_Housing)  
+- Student Housing Data (Boston University)  
+- Building and Property Violations  
+- SAM Address Management  
+- Registry of Deeds (Ownership info)
 
-* What mechanisms or procedures were used to collect the data (e.g., API, artificially generated, crowdsourced \- paid, crowdsourced \- volunteer, scraped or crawled, survey, forms, or polls, taken from other existing datasets, provided by the client, etc)? How were these mechanisms or procedures validated?  
-* If the dataset is a sample from a larger set, what was the sampling strategy (e.g., deterministic, probabilistic with specific sampling probabilities)?  
-* Over what timeframe was the data collected? Does this timeframe match the creation timeframe of the data associated with the instances (e.g., recent crawl of old news articles)? If not, please describe the timeframe in which the data associated with the instances was created. 
+**Please provide a link to any data dictionaries for the datasets in this project.**  
+The data dictionary is provided in the project Google Drive folder:  
+https://drive.google.com/drive/folders/17W3eOY5tnY3JO7sHMJ2rUTcnqAVJAVd1
 
-*Preprocessing/cleaning/labeling* 
+**What keywords or tags would you attach to the data set?**  
+housing, compliance, Boston, rental registry, violations, property ownership, 311, data reconciliation, civic tech
 
-* Was any preprocessing/cleaning/labeling of the data done (e.g., discretization or bucketing, tokenization, part-of-speech tagging, SIFT feature extraction, removal of instances, processing of missing values)? If so, please provide a description. If not, you may skip the remaining questions in this section.   
-* Were any transformations applied to the data (e.g., cleaning mismatched values, cleaning missing values, converting data types, data aggregation, dimensionality reduction, joining input sources, redaction or anonymization, etc.)? If so, please provide a description.   
-* Was the “raw” data saved in addition to the preprocessed/cleaned/labeled data (e.g., to support unanticipated future uses)? If so, please provide a link or other access point to the “raw” data, this could be a link to a folder in your GitHub Repo, Spark\! owned Google Drive Folder for this project, or a path on the SCC, etc.  
-* Is the code that was used to preprocess/clean the data available? If so, please provide a link to it (e.g., EDA notebook/EDA script in the GitHub repository). 
+**Domain(s) of Application:**  
+Civic Tech, Housing, Anomaly Detection, Geospatial Analysis
 
-*Uses* 
+---
 
-* What tasks has the dataset been used for so far? Please provide a description.   
-* What (other) tasks could the dataset be used for?  
-* Is there anything about the composition of the dataset or the way it was collected and preprocessed/cleaned/labeled that might impact future uses?   
-* Are there tasks for which the dataset should not be used? If so, please provide a description.
+## Motivation
 
-*Distribution*
+**For what purpose was the dataset created?**  
+To monitor and enforce rental registration compliance in the City of Boston, and to help ISD proactively identify unregistered rentals based on discrepancies across multiple civic datasets.
 
-* Based on discussions with the client, what access type should this dataset be given (eg., Internal (Restricted), External Open Access, Other)?
+---
 
-*Maintenance* 
+## Composition
 
-* If others want to extend/augment/build on/contribute to the dataset, is there a mechanism for them to do so? If so, please provide a description. 
+**What do the instances that comprise the dataset represent?**  
+Each dataset represents different aspects of rental property activity:  
+- 311: Housing complaints (tabular, geospatial)  
+- SAM: Official address records (tabular)  
+- Rental Registry: Registered rental properties (tabular)  
+- Student Housing: University addresses housing students (tabular)  
+- Violations: Past enforcement actions (tabular)
 
-*Other*
+**How many instances are there in total?**  
+- Rental Registry: ~100,000  
+- 311 (filtered): ~25,000  
+- Student Housing: ~3,000  
+- Violations: ~20,000  
+- SAM Addresses: ~190,000
 
-* Is there any other additional information that you would like to provide that has not already been covered in other sections?
+**Is this a sample or complete set?**  
+The data is a snapshot, not exhaustive. For example, 311 only includes complaints submitted to the city and may underrepresent issues. The rental registry does not capture unregistered properties. SAM is considered complete for addresses.
 
+**What data does each instance consist of?**  
+Structured tabular records: property addresses, owner names, registration statuses, complaint types, dates, etc.
+
+**Is there any information missing from individual instances?**  
+Yes. Many records lack standardized addresses or parcel IDs, and owner name data may be outdated or inconsistent.
+
+**Are there recommended data splits?**  
+No formal splits, as the goal is not ML model training but analytical comparison and pattern recognition.
+
+**Are there any errors, noise, or redundancies?**  
+Yes – inconsistent address formatting, duplicate registrations, and outdated ownership records were common.
+
+**Is the dataset self-contained or linked to external resources?**  
+Self-contained within the provided datasets. External sources (e.g., Registry of Deeds) were integrated before analysis.
+
+**Are there any restrictions or archival versions?**  
+No known restrictions; data is from public or city-provided sources.
+
+**Confidential or sensitive data?**  
+No confidential individual data. Some ownership details could indirectly identify individuals.
+
+**Offensive or harmful content?**  
+No.
+
+**Is it possible to identify individuals?**  
+Property owner names may be personally identifying when combined with addresses.
+
+---
+
+## Dataset Snapshot
+
+| Dataset                | Size    | # Instances | # Fields | Labeled Classes | # Labels |
+|------------------------|---------|-------------|----------|------------------|----------|
+| Rental Registry        | ~12 MB  | ~100,000     | 10–15     | Yes              | Registered / Not |
+| 311 Housing Complaints | ~6 MB   | ~25,000      | 8–12      | Yes              | Complaint types |
+| Student Housing (BU)   | ~1 MB   | ~3,000       | 5–8       | No               | N/A |
+| Violations             | ~5 MB   | ~20,000      | 8–10      | Yes              | Violation type |
+| SAM Addresses          | ~20 MB  | ~190,000     | 5–7       | No               | N/A |
+
+---
+
+## Collection Process
+
+**What mechanisms were used to collect the data?**  
+- City datasets downloaded from internal ISD systems and Boston’s open data portal  
+- Student data provided by Boston University  
+- SAM address data provided by the City  
+- Registry of Deeds manually merged in via owner name/address
+
+**Sampling strategy?**  
+No formal sampling. Data reflects full available records from ISD and BU for the Spring 2025 semester.
+
+**Timeframe?**  
+Data was collected between Jan–Apr 2025. Historical data ranges from 2016–2025 depending on the dataset.
+
+---
+
+## Preprocessing / Cleaning / Labeling
+
+**Was any preprocessing done?**  
+Yes:
+- Address standardization and fuzzy matching using string similarity and regex  
+- Removal of duplicates and entries with missing critical fields  
+- Adding columns for match confidence, property type, and flags for likely unregistered properties
+
+**Transformations?**  
+Yes. Cleaning nulls, merging datasets on address fields, geocoding addresses, and tagging known student housing.
+
+**Was raw data saved?**  
+Yes, stored in the project’s Google Drive folder.
+
+**Is the preprocessing code available?**  
+Yes: [GitHub link to data cleaning scripts](https://github.com/BU-Spark/ds-isd-reconciliation/tree/main/notebooks)
+
+---
+
+## Uses
+
+**What tasks has the dataset been used for so far?**  
+- Identifying unregistered rental properties  
+- Visualizing non-compliance hotspots  
+- Analyzing patterns by geography, owner type, and complaint frequency
+
+**What other tasks could the dataset be used for?**  
+- Predicting risk of violations  
+- Designing targeted outreach campaigns  
+- Studying urban rental dynamics over time
+
+**Limitations for future use?**  
+Address inconsistencies may limit merge accuracy; owner info may be outdated.
+
+**Any tasks the dataset should not be used for?**  
+Should not be used to enforce penalties without verification; results require human validation.
+
+---
+
+## Distribution
+
+**What access type should this dataset be given?**  
+Internal (Restricted) – for ISD and Spark-affiliated teams
+
+---
+
+## Maintenance
+
+**Can others contribute to the dataset?**  
+Yes – future Spark! teams can build on this work using our GitHub repo and documentation.
+
+---
+
+## Other
+
+**Additional notes**  
+This project offers a scalable model for civic data reconciliation. Future work could incorporate AI-based address standardization or integrate tax assessor data for even better accuracy.
