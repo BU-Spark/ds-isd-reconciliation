@@ -1,54 +1,136 @@
-ISD: Data Reconciliation and Compliance Enhancement Project
+# ISD Data Reconciliation and Compliance
 
-This repository contains a data analysis pipeline developed for the City of Boston’s Inspectional Services Department (ISD) to identify and address gaps in rental property registration compliance. The project addresses three core tasks:
+This repository contains a data analysis pipeline for the Boston Inspectional Services Department (ISD) focused on improving rental registration compliance. The project integrates and reconciles multiple civic datasets to identify likely unregistered rental properties, uncover data quality issues, and develop tools to support more proactive inspections and outreach.
 
-Identifying Unregistered Rental Properties by comparing the active rental registry against external datasets (e.g., 311 housing complaints, student housing, and SAM address data)
+There are currently three major components of this project:
 
-Characterizing Trends in Non-Compliance based on geographic and ownership patterns
+1. Identifying likely unregistered rental properties through cross-dataset comparison
+2. Analyzing registration and ownership patterns using demographic and geographic factors
+3. Building visualizations and reporting tools for actionable insights and future use
 
-Developing Tools for Ongoing Monitoring and Outreach
+## Getting Started
 
-Overview
-The City of Boston requires all rental properties to be registered with ISD, yet significant numbers of units remain unregistered due to turnover, confusion, or oversight. These gaps hinder proactive housing code enforcement and reduce visibility into tenant living conditions. ISD seeks to modernize its rental oversight by using data to shift from reactive (complaint-driven) enforcement to proactive compliance monitoring.
+The `notebooks/` folder contains Jupyter Notebooks demonstrating how to run data cleaning, address standardization, and reconciliation logic. Each major task is organized in a separate notebook:
 
-This project contributes to that effort by building a repeatable data reconciliation process that compares official rental records with external data sources to identify likely rentals that are unregistered. The project also visualizes compliance patterns, highlights areas and property types with low registration rates, and supports future outreach efforts.
+- `address_standardization.ipynb` – cleans and normalizes address fields
+- `registration_analysis.ipynb` – explores patterns in registration by ward, owner, manager, etc.
+- `unregistered_properties.ipynb` – matches across datasets to infer likely unregistered rentals
 
-Project Description
-The core challenge is reconciling disparate datasets to infer the true “rental universe” in Boston and identify likely unregistered rentals. Datasets used include:
+You can find relevant datasets in the `data/` directory or linked from the [project Google Drive](https://drive.google.com/drive/folders/17W3eOY5tnY3JO7sHMJ2rUTcnqAVJAVd1?usp=sharing). Final visualizations are available in `visuals/`.
 
-Boston’s Active Rental Registry
+---
 
-311 Housing Complaints dataset
+## Overview
 
-Student Housing Records from local universities
+Boston’s Rental Registration Ordinance requires all rental units to be registered with ISD. However, many rental properties remain unregistered due to tenant turnover, lack of awareness, or clerical oversight. This gap prevents ISD from fully enforcing housing quality standards and limits proactive inspections.
 
-Violations data from ISD enforcement
+This project helps bridge that gap. By integrating registration data with complaints, student housing, address registries, and violation records, we can identify high-probability unregistered rentals, analyze compliance trends, and recommend strategies for enforcement and outreach.
 
-The SAM Address database, which provides standardized address keys
+Ultimately, this work supports the city’s goal of ensuring clean, safe, and legal housing for all residents.
 
-Using this data, the pipeline performs fuzzy address matching, deduplicates property records, and flags discrepancies such as properties with rental complaints or multiple occupants but no registration. The outcome helps ISD prioritize enforcement and outreach.
+---
 
-Project Objectives
-Task 1: Identify Likely Unregistered Properties
-Compare addresses across datasets and apply logic to infer unregistered rentals (e.g., presence in 311 data or student housing but missing from rental registry).
+## Project Description
 
-Task 2: Analyze Compliance Trends
-Assess trends in compliance by neighborhood, property size, owner type, and manager involvement. Generate statistics and visualizations on who registers and where gaps exist.
+The ISD Data Reconciliation and Compliance project has three main goals:
 
-Task 3: Build a Scalable Monitoring Framework
-Package all cleaning, merging, and analysis scripts to support ongoing monitoring. Document data challenges and limitations to guide future students and ISD efforts.
+1. **Data Reconciliation and Flagging**  
+   Clean and merge datasets (SAM, 311, student housing, violations, rental registry) to create a unified view of housing activity and flag properties likely acting as unregistered rentals.
 
-Sample Deliverables
-Code and reproducible data cleaning pipeline (Python)
+2. **Pattern Analysis and Visualization**  
+   Explore compliance patterns by neighborhood, ownership structure, property type, and complaint frequency. Generate dashboards and maps to support targeted enforcement.
 
-GIS maps and Tableau dashboards showing high-risk non-compliant areas
+3. **Documentation and Future-Proofing**  
+   Deliver reproducible, well-documented code and cleaned datasets. Provide detailed notes and a roadmap so future Spark! teams can build on this work.
 
-CSV files and visual outputs highlighting unregistered addresses
+---
 
-A final report with findings, methodology, and recommendations for future analysis
+## Project Checklist
 
-Broader Impact
-By exposing gaps in Boston’s rental registration and enabling targeted enforcement, this project supports safer, more equitable housing for residents. The improved oversight framework enables ISD to protect tenants more effectively, especially in vulnerable neighborhoods or under-regulated sectors like student housing.
+1. Clean and standardize all addresses using the SAM reference dataset
+2. Identify duplicate or stale registrations
+3. Match rental registry with external datasets (311, student housing, violations, ownership)
+4. Flag likely unregistered rentals using logic rules
+5. Visualize patterns in registration by ward, property size, owner type, etc.
+6. Create draft outreach list and recommendations for ISD
+7. Document all cleaning steps and blockers for future teams
 
-This project also provides a template for future data science teams to build upon, fostering a long-term strategy for rental oversight and compliance in Boston.
+---
 
+## Proposed Solution
+
+1. **Reconciliation Logic:**  
+   Standardize addresses using SAM data and fuzzy matching. Cross-reference registry with 311 complaints, student housing, and violation records. Flag properties present in external datasets but missing from the registry as likely unregistered.
+
+2. **Pattern Detection:**  
+   Analyze where compliance is low using statistical summaries and geographic heatmaps. Identify trends in under-registration based on property size, management structure, or ward-level demographics.
+
+3. **Scalability and Documentation:**  
+   Create a well-documented, reproducible workflow with reusable code for address cleaning, matching logic, and report generation. Support continuous improvement across semesters.
+
+---
+
+## Other Folders
+
+### `./notebooks`  
+Contains Jupyter notebooks used for analysis, cleaning, and visualization.  
+Includes EDA, registration overlap analysis, and property-level comparison.
+
+### `./data`  
+Raw and cleaned datasets, including:
+- Rental Registry (Jan 2025)
+- SAM Address Management
+- 311 ISD Complaints
+- Student Housing Addresses
+- Building Violations
+
+### `./scripts`  
+Standalone Python scripts for fuzzy matching, owner standardization, and preprocessing logic.
+
+### `./visuals`  
+Contains exported graphs, maps, and dashboards used in reporting and client deliverables.
+
+---
+
+## Resources
+
+### Datasets  
+- [Active Rental Registry](https://drive.google.com/...)  
+- [SAM Standardized Address Management](https://drive.google.com/...)  
+- [311 Housing Complaints](https://data.boston.gov/dataset/311-service-requests)  
+- [Student Housing Addresses – BU](https://drive.google.com/...)  
+- [Violations Data](https://drive.google.com/...)
+
+### Client and Course Links  
+- [ISD Project Drive Folder](https://drive.google.com/drive/folders/17W3eOY5tnY3JO7sHMJ2rUTcnqAVJAVd1)  
+- [Spark! GitHub Organization](https://github.com/BU-Spark)  
+- [City of Boston Rental Registry Ordinance](https://www.boston.gov/departments/inspectional-services/rental-property-registration)
+
+---
+
+## References
+
+1. City of Boston Rental Registration Analysis (2024)
+2. Spark! Project Guidelines and Dataset Standards
+3. U.S. Census data on rental housing (for geographic validation)
+4. Python libraries: `pandas`, `fuzzywuzzy`, `geopandas`, `matplotlib`, `seaborn`
+
+---
+
+## Contributors
+
+- Dhruv Gandhi (dhruvg@bu.edu)  
+- Benson Yu (benson@bu.edu)  
+- David Ueda (davidu@bu.edu)  
+- Louie Belile (lbelile@bu.edu)
+
+Project Advisors:
+- Abby Gualda (Spark! Fellow)  
+- Lina Dellanno (Project Manager)  
+- Caslow Chien (TPM)  
+- Marcio Fonseca, Gina Belmonte, Sebastian Olascoaga (ISD)
+
+---
+
+## License  
+This project is for academic use only. Data used in this project is subject to the terms of access as granted by the City of Boston and Boston University.
