@@ -23,29 +23,27 @@ Boston Inspectional Services Department (ISD), Housing Division
 - Sebastian Olascoaga (sebastian.olascoaga@boston.gov)
 
 **What class was this project part of?**  
-CDS DS 539 - Spark! Practicum
+CDS DS 539 - Spark! Data Science X-Lab Practicum
 
 ---
 
 ## Dataset Information
 
 **What data sets did you use in your project?**  
-- Active Rental Registrations (Jan 2025)  
-- 311 Service Requests (filtered to ISD_Housing)  
-- Student Housing Data (Boston University)  
+- Active Rental Registrations
+- 311 Service Requests  
+- Student Housing Data  
 - Building and Property Violations  
 - SAM Address Management  
-- Registry of Deeds (Ownership info)
 
 **Please provide a link to any data dictionaries for the datasets in this project.**  
-The data dictionary is provided in the project Google Drive folder:  
-https://drive.google.com/drive/folders/17W3eOY5tnY3JO7sHMJ2rUTcnqAVJAVd1
+fill out
 
 **What keywords or tags would you attach to the data set?**  
-housing, compliance, Boston, rental registry, violations, property ownership, 311, data reconciliation, civic tech
+housing, compliance, Boston, rental registry, violations, property ownership, 311, data reconciliation
 
 **Domain(s) of Application:**  
-Civic Tech, Housing, Anomaly Detection, Geospatial Analysis
+fill out
 
 ---
 
@@ -60,16 +58,16 @@ To monitor and enforce rental registration compliance in the City of Boston, and
 
 **What do the instances that comprise the dataset represent?**  
 Each dataset represents different aspects of rental property activity:  
-- 311: Housing complaints (tabular, geospatial)  
-- SAM: Official address records (tabular)  
-- Rental Registry: Registered rental properties (tabular)  
-- Student Housing: University addresses housing students (tabular)  
-- Violations: Past enforcement actions (tabular)
+- 311: Housing complaints  
+- SAM: Official address records  
+- Rental Registry: Registered rental properties  
+- Student Housing: University addresses housing students  
+- Violations: Past enforcement actions
 
-**How many instances are there in total?**  
+**How many instances are there in total?**  (fix) 
 - Rental Registry: ~100,000  
-- 311 (filtered): ~25,000  
-- Student Housing: ~3,000  
+- 311: ~25,000  
+- Student Housing: ~300,000  
 - Violations: ~20,000  
 - SAM Addresses: ~190,000
 
@@ -89,7 +87,7 @@ No formal splits, as the goal is not ML model training but analytical comparison
 Yes – inconsistent address formatting, duplicate registrations, and outdated ownership records were common.
 
 **Is the dataset self-contained or linked to external resources?**  
-Self-contained within the provided datasets. External sources (e.g., Registry of Deeds) were integrated before analysis.
+Self-contained within the provided datasets.
 
 **Are there any restrictions or archival versions?**  
 No known restrictions; data is from public or city-provided sources.
@@ -121,15 +119,14 @@ Property owner names may be personally identifying when combined with addresses.
 
 **What mechanisms were used to collect the data?**  
 - City datasets downloaded from internal ISD systems and Boston’s open data portal  
-- Student data provided by Boston University  
-- SAM address data provided by the City  
-- Registry of Deeds manually merged in via owner name/address
+- Student data provided by ISD  
+- SAM address data provided by ISD  
 
 **Sampling strategy?**  
-No formal sampling. Data reflects full available records from ISD and BU for the Spring 2025 semester.
+No formal sampling. Data reflects full available records from ISD and Spark!.
 
 **Timeframe?**  
-Data was collected between Jan–Apr 2025. Historical data ranges from 2016–2025 depending on the dataset.
+Historical data ranges from 2016–2025 depending on the dataset.
 
 ---
 
@@ -142,7 +139,7 @@ Yes:
 - Adding columns for match confidence, property type, and flags for likely unregistered properties
 
 **Transformations?**  
-Yes. Cleaning nulls, merging datasets on address fields, geocoding addresses, and tagging known student housing.
+Yes. Cleaning nulls, merging datasets on SAM ID field, standardizing addresses, and tagging known student housing.
 
 **Was raw data saved?**  
 Yes, stored in the project’s Google Drive folder.
