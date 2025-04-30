@@ -1,0 +1,54 @@
+ISD: Data Reconciliation and Compliance Enhancement Project
+
+This repository contains a data analysis pipeline developed for the City of Boston’s Inspectional Services Department (ISD) to identify and address gaps in rental property registration compliance. The project addresses three core tasks:
+
+Identifying Unregistered Rental Properties by comparing the active rental registry against external datasets (e.g., 311 housing complaints, student housing, and SAM address data)
+
+Characterizing Trends in Non-Compliance based on geographic and ownership patterns
+
+Developing Tools for Ongoing Monitoring and Outreach
+
+Overview
+The City of Boston requires all rental properties to be registered with ISD, yet significant numbers of units remain unregistered due to turnover, confusion, or oversight. These gaps hinder proactive housing code enforcement and reduce visibility into tenant living conditions. ISD seeks to modernize its rental oversight by using data to shift from reactive (complaint-driven) enforcement to proactive compliance monitoring.
+
+This project contributes to that effort by building a repeatable data reconciliation process that compares official rental records with external data sources to identify likely rentals that are unregistered. The project also visualizes compliance patterns, highlights areas and property types with low registration rates, and supports future outreach efforts.
+
+Project Description
+The core challenge is reconciling disparate datasets to infer the true “rental universe” in Boston and identify likely unregistered rentals. Datasets used include:
+
+Boston’s Active Rental Registry
+
+311 Housing Complaints dataset
+
+Student Housing Records from local universities
+
+Violations data from ISD enforcement
+
+The SAM Address database, which provides standardized address keys
+
+Using this data, the pipeline performs fuzzy address matching, deduplicates property records, and flags discrepancies such as properties with rental complaints or multiple occupants but no registration. The outcome helps ISD prioritize enforcement and outreach.
+
+Project Objectives
+Task 1: Identify Likely Unregistered Properties
+Compare addresses across datasets and apply logic to infer unregistered rentals (e.g., presence in 311 data or student housing but missing from rental registry).
+
+Task 2: Analyze Compliance Trends
+Assess trends in compliance by neighborhood, property size, owner type, and manager involvement. Generate statistics and visualizations on who registers and where gaps exist.
+
+Task 3: Build a Scalable Monitoring Framework
+Package all cleaning, merging, and analysis scripts to support ongoing monitoring. Document data challenges and limitations to guide future students and ISD efforts.
+
+Sample Deliverables
+Code and reproducible data cleaning pipeline (Python)
+
+GIS maps and Tableau dashboards showing high-risk non-compliant areas
+
+CSV files and visual outputs highlighting unregistered addresses
+
+A final report with findings, methodology, and recommendations for future analysis
+
+Broader Impact
+By exposing gaps in Boston’s rental registration and enabling targeted enforcement, this project supports safer, more equitable housing for residents. The improved oversight framework enables ISD to protect tenants more effectively, especially in vulnerable neighborhoods or under-regulated sectors like student housing.
+
+This project also provides a template for future data science teams to build upon, fostering a long-term strategy for rental oversight and compliance in Boston.
+
